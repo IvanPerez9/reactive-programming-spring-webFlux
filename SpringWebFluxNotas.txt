@@ -1,0 +1,61 @@
+Documentacion:
+
+	- https://projectreactor.io/docs/core/release/reference/#getting
+	- https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo.reactive
+
+
+1. Introduccion
+
+	- App web con Stream reactivo no bloqueante, frente a Spring MVC que usa peticiones Http bloqueantes mediante Serveltt
+	- Soporta 2 componentes ppal, HttpHandler (Request y Response) y WebHandler todo sin bloqueo
+	- En contra de MVN sin bloqueo y asincrono.
+	
+	- Flujos por partes, procesos Async, concurrencia y se puede volver a re-intentar
+	- Reactor es el API principal, componente de WebFlux
+	
+2. Reactor API: Programacion Reactiva
+	
+	- Sigue siendo a través de POO, orientado a flujo de datos (Streams), rollo funcional
+	- Saca lo mejor del patron observer, iterator y programacion funcional
+		- El OBSERVABLES o publisher va a ser FLUX o MONO 
+	- Operadores como map y similar reducen las tareas de transformacion
+	- Project Reactor, principal libreria y API (Propio de Spring, hay otros externos)
+	
+	- No pasa nada hasta que nos subscribamos a la accion. Subscribe()
+	- En el subscribe tambien se puede hacer cosas, con un consumidor
+	- Los flujos, los stream, son inmutables
+	
+	- MongoReactivo, muy similar a trabajar con JPA en SpringMVC 
+	- Tiene repositorios reactivos, como el Crud etc..
+		- La diferencia es que retorna Mono o Flux los repositorios
+		- Mismos metodos del crudRepository
+		
+	- Contrapresion: Poder indicar el subscriptor al emisor la cantidad de elementos que envia por solicitud, el lote que envia
+
+3. Introduccion a la programacion Reactiva
+	
+	- Nos permite construir aplicaciones web con reactive Streams
+		- MVC -> con API Servlet y solo puede tener 1 peticion por HttpRequest
+	- En WebFlux es sincrono, no bloqueante
+		- Servidores sin bloqueo, Netty o Tomcat 3.1+
+		- Cambia los repositorios de JDBC,JPA más relacional a MongoReactive o CassandraReactive, Redix ...
+		
+	- MongoDB:
+		- NoSQL -> Mucho mas liviana, de acceso y escritura
+		- No maneja tablas, maneja colecciones
+		- Se pueden asociar uno dentro de otro, por documentos JSON o teniendo un parentId o similar
+	
+	- Entities:
+		- @Document(collection = "productos") es como @Entity en JPA pero para mongoReactivo
+		
+	- flatmap
+		- Muy util cuando tenemos Flux de un tipo, para mapear directos al tipo
+	
+	- MongoTemplate: Para borrar tablas y trabajar con la mongo. "test" es la BBDD por defecto
+		- Siempre se puede cambiar la BBDD con el properties
+
+4. CRUD con Thymeleaf
+
+	- https://spring.io/projects/spring-data#learn
+	- Muy interesantes los metodos "doOnNext" y "thenReturn" o "then" con objetos Mono
+		
