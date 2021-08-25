@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "19869ef0-34ac-4185-8232-2f2d25410094",
+		"name": "Curso WebFlux",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FindAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindAll routerFunction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload foto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/0017462/Pictures/Photo.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/productos/upload/61234e9b6c59657bde9d30d9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"upload",
+						"61234e9b6c59657bde9d30d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"client"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

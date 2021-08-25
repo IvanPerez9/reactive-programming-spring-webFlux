@@ -58,4 +58,38 @@ Documentacion:
 
 	- https://spring.io/projects/spring-data#learn
 	- Muy interesantes los metodos "doOnNext" y "thenReturn" o "then" con objetos Mono
+	
+5. apiRest -> Nada relevante que comentar
+6. apiRest con Router Function
+	
+	- Bena de router function, es una manera mas funcional y reactiva
+	- El handler seria como nuestro controllador, importante anotar con @Component
+	
+7. Junit -> WebTestClient
+
+	- Levanta un servidor real para realizar las pruebas
+	- Luego tiene modo simulado tambien, simulando un servidor https
+	
+	- En la raiz del proyecto podemos poner "mvnw test" para correr los test, desde consola
+	
+8. Proyecto que consume el anterior
+
+	- Primero el client, cambiar el puerto en el que va a levantar. En el application.properties o en la run config con server.port = ""
+	- Conexion para consumir la API
+	
+9. Spring Eureka Server - Microservicios
+
+	- Microservicios: Pequeños proyectos que son autonomos y colaboran entre ellos para llevar a cabo una gran tareas
+		- La descomponemos en pequeños modulos
+		- Más facil actualizar y modificarlos, muy modularizados
+		- Pueden trabajar entre ellos con versiones distintas de uno a otro, o con distintos lenguajes de programacion
+		- Es más facil versionar
+		- Más escalable, incluso en la nube. Se pueden desplegar varias versiones distintas
+	- Cada micro esta desplegado en su propio puerto
+		- Se pueden conectar a diferentes BBDD
+		- Escalable, desplegar más instancias del mismo micro -> Servidor de nombre
+		- 
+		
+
+	
 		
